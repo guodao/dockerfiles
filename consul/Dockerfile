@@ -35,8 +35,6 @@ RUN TERM=xterm XC_ARCH="amd64" XC_OS="linux" LD_FLAGS=" -extldflags -static" mak
 
 FROM alpine:latest
 
-COPY --from=builder /usr/bin/consul /usr/bin/consul
-COPY --from=builder /etc/ssl/certs/ /etc/ssl/certs
 
 ENTRYPOINT [ "consul" ]
 CMD [ "--help" ]
